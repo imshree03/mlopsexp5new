@@ -28,4 +28,16 @@ for _ in range(100):
     # Write metrics to file
     with open('metrics.txt', 'w') as outfile:
         outfile.write(f'\n Mean Squared Error = {average_mse}.')
+        # Plotting the training data
+plt.scatter(X_train, y_train, color='blue', label='Training data')
+# Plotting the testing data
+plt.scatter(X_test, y_test, color='red', label='Testing data')
+plt.scatter(X_test, y_preds, c="g", label="Predictions")
+# Show the legend
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Training and Testing Data Split')
+plt.legend()
+plt.grid(True)
+plt.savefig('model_results.png', dpi=120)
 
